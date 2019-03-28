@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% load i18n %}
+
+{% block content %}
+
+<!-- Heading -->
+    <div id="heading" style="background-position: bottom">
+        <h1>Error 500</h1>
+    </div>
+
+<!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <div class="content">    
+                <div class="intro">
+                	<p>This page does not exist.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

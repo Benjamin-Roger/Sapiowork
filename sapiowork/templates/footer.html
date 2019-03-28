@@ -1,0 +1,46 @@
+{% load wagtailcore_tags %}
+{% load menu_tags %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_USED %}
+
+<!-- Footer -->
+			
+			<footer id="footer">
+
+				<div id="contact_banner" ><h2>{% if LANGUAGE_USED == 'fr' %}Une idée de projet ? Faites nous en part !{% else%}A project idea ? Tell us about it!{%endif%}</h2><a class='button' href="contact">CONTACT</a>
+				</div>
+				<div class="inner">
+					<div class="content">
+						<address>
+								<h3>France</h3>
+								<span class='address-overflow'>
+									<i class="fa fa-map-marker"></i><strong>Sapiowork</strong><br/>
+									13 Bis Avenue de la Motte-Picquet
+									<br/>
+									75007 Paris
+									FRANCE
+								</span>
+								</span>
+								<span class="email">
+									<i class="fa fa-envelope"></i><a href="mailto:contact@sapiowork.com">contact@sapiowork.com</a>
+								</span>
+						</address>
+						<section>
+							<h4>{% if LANGUAGE_USED == 'fr' %}Liens{% else%}Additional links{%endif%}</h4>
+							{% flat_menu 'footer' max_levels=1 show_menu_heading=False  use_specific=0  fall_back_to_default_site_menus=True %}
+						</section>
+						<section>
+							<h4>{% if LANGUAGE_USED == 'fr' %}Suivez-nous !{% else%}Follow Us (Soon){%endif%}</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; Sapiowork 2019
+					</div>
+				</div>
+			</footer>

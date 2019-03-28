@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-domainpage{% endblock %}
+
+{% block content %}
+
+<!-- Heading -->
+    <div id="heading" style="background-position: bottom">
+        <h1>{{page.title}}</h1>
+    </div>
+
+<!-- Main -->
+    <section class="wrapper" style="padding-top: 1.5rem;">
+
+        <div class="inner">
+            <div class="content">
+                <div class="intro" style="text-align: center">{{ page.intro|richtext }}</div>
+            </div>
+
+                {% if acti_title_0 %}
+                <div class="highlights">
+                            <a href="{{acti_url_0}}">
+                                <section>
+                                <div class="content">
+                                    <header>
+                                        <span class="{{class_code_0}}"></span>
+                                        <h3>{{acti_title_0}}</h3>
+                                    </header>
+                                    <p>{{acti_job_0}}
+                                    </p>
+                                </div>
+                            </section>
+                            </a>
+                            <a href ="{{acti_url_1}}">
+                                <section>
+                                    <div class="content">
+                                        <header>
+                                            <span class="{{class_code_1}}"></span>
+                                            <h3>{{acti_title_1}}</h3>
+                                        </header>
+                                        <p>{{acti_job_1}}</p>
+                                    </div>
+                                </section>
+                            </a>
+                            <a href ="{{acti_url_2}}">
+                                <section>
+                                    <div class="content">
+                                        <header>
+                                            <span class="{{class_code_2}}"></span>
+                                            <h3>{{acti_title_2}}</h3>
+                                        </header>
+                                        <p>{{acti_job_2}}</p>
+                                    </div>
+                                </section>
+                            </a>
+                            <a href ="{{acti_url_3}}">
+                                <section>
+                                    <div class="content" >
+                                        <header>
+                                            <span class="{{class_code_3}}"></span>
+                                            <h3>{{acti_title_3}}</h3>
+                                        </header>
+                                        <p>{{acti_job_3}}</p>
+                                    </div>
+                                </section>
+                            </a>
+                        </div>
+                        {%endif%}
+            </div>
+    </section>
+
+{% endblock %}

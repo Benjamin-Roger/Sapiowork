@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body_class %}template-404{% endblock %}
+
+{% load wagtailimages_tags %}
+
+{% load wagtailcore_tags %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_USED %}
+
+{% block content %}
+
+
+
+<!-- Heading -->
+    <div id="heading" style="background-position: bottom">
+        <h1>{% if LANGUAGE_USED == 'fr' %}Erreur{% else%}Error{%endif%} 404</h1>
+    </div>
+
+<!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <div class="content">    
+                <div class="intro">
+                	<p style="text-align:center">{% if LANGUAGE_USED == 'fr' %}Cette page n'existe pas.{% else%}This page does not exist.{%endif%}
+                	
+                	</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

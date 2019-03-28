@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load i18n %}
+
+{% block content %}
+
+<!-- Main -->
+    <section id="main" class="wrapper" style="padding-top: 1.5rem;">
+        <div class="inner">
+        {% if request.GET.tag|length %}
+          <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
+        {% endif %}
+          {% for blogpage in blogpages %}
+            <div class="content">
+
+                <p>
+                    <strong><a href="{% pageurl blogpage %}">{{ blogpage.translated_title }}</a></strong><br />
+                    <small>Revised: {{ blogpage.latest_revision_created_at }}</small><br />
+                    {% if blogpage.author %}
+                      <p>By {{ blogpage.author }}</p>
+                    {% endif %}
+                </p>
+
+          {% empty %}
+              No pages found with that tag.
+          {% endfor %}
+            </div>
+        </div>
+
+{% endblock %}
+

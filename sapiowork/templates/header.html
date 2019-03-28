@@ -1,0 +1,41 @@
+{% load static %}
+{% load menu_tags %}
+{% load wagtailuserbar %}
+{% load i18n %}
+{% load wagtailcore_tags %}
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="{% pageurl request.site.root_page %}">
+					<svg x="0" y="0" height="35px"
+							 viewBox="0 0 400 746.3" style="enable-background:new 0 0 400 746.3;" xml:space="preserve">
+						<path class="st0" d="M326,365.1L17.4,673.7C56.8,712.9,111.1,737,171,737c120.5,0,218.2-97.7,218.2-218.2 C389.3,458.9,365.1,404.6,326,365.1z"/>
+						<path class="st1" d="M81.6,383.5L390.2,74.9C350.6,34.7,295.6,9.8,234.7,9.8c-120.5,0-218.2,97.7-218.2,218.2
+	C16.5,288.9,41.4,343.9,81.6,383.5z"/>
+						<line class="st2" x1="129.9" y1="450.1" x2="272.4" y2="307.6"/>
+						</svg>
+				</a>
+
+				<!-- Nav tab -->
+				<nav class="menu_tab">			
+					{% main_menu %}
+				</nav>
+				<div class="flags" >
+					<a id="link_fr" href='{{path_fr}}' >
+						<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkZyYW5jZSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzAwIDMwMDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxwb2x5Z29uIHBvaW50cz0iICAgMjc0LDIyOCAxOTQuMjUyLDIyOCAxOTQsODAgMjczLjc0OCw4MCAgIiBzdHlsZT0iZmlsbDojRUU1MjgxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDo4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiLz48cG9seWdvbiBwb2ludHM9IiAgIDE5NCwyMjggMTE0LjI1MiwyMjggMTE0LDgwIDE5My43NDgsODAgICIgc3R5bGU9ImZpbGw6I0ZGRkZGRjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6ODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7Ii8+PHBvbHlnb24gcG9pbnRzPSIgICAxMTQsMjI4IDM0LjI1MiwyMjggMzQsODAgMTEzLjc0OCw4MCAgIiBzdHlsZT0iZmlsbDojMjg4RUVBO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDo4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiLz48L2c+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PC9zdmc+"/></a>
+					<a id="link_en" href='{{path_en}}' >
+						<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IlVuaXRlZF94NUZfS2luZ2RvbSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzAwIDMwMDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDMwMCAzMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxwb2x5Z29uIHBvaW50cz0iICAgMjczLjc0OSw3MCAzNCw3MCAzNC4zNTIsMjM4IDI3NCwyMzggICIgc3R5bGU9ImZpbGw6IzI4OEVFQTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6ODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7Ii8+PHBvbHlnb24gcG9pbnRzPSIgICAyNzMuODI0LDEyNiAxODUuNzI0LDEyNiAxODUuNzI0LDcwIDEyMS41MjMsNzAgMTIxLjUyMywxMjYgMzQsMTI2IDM0LjE0MiwxODUuNzU3IDEyMS41MjMsMTg1Ljc1NyAxMjEuNTIzLDIzOCAxODUuNzI0LDIzOCAgICAxODUuNzI0LDE4NS43NTcgMjczLjkyNSwxODUuNzU3ICAiIHN0eWxlPSJmaWxsOiNGRkZGRkY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIvPjxwb2x5Z29uIHBvaW50cz0iICAgMTcwLDE0MiAxODEuMzc3LDE0MiAyNzMuNzY0LDgwLjAwNiAyNzMuNzQ5LDcwIDI1OS45Niw3MCAxNzAsMTMwLjM2NiAgIiBzdHlsZT0iZmlsbDojRUU1MjgxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDo4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiLz48cG9seWdvbiBwb2ludHM9IiAgIDEzOCwxNDIgMTI2LjYyMywxNDIgMzQuMjM2LDgwLjAwNiAzNC4yNTEsNzAgNDguMDQsNzAgMTM4LDEzMC4zNjYgICIgc3R5bGU9ImZpbGw6I0VFNTI4MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6ODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7Ii8+PHBvbHlnb24gcG9pbnRzPSIgICAxNzAsMTY2IDE4MS4zNzcsMTY2IDI3My43NjQsMjI3Ljk5NCAyNzMuNzQ5LDIzOCAyNTkuOTYsMjM4IDE3MCwxNzcuNjM0ICAiIHN0eWxlPSJmaWxsOiNFRTUyODE7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjg7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIvPjxwb2x5Z29uIHBvaW50cz0iICAgMTM4LDE2NiAxMjYuNjIzLDE2NiAzNC4yMzYsMjI3Ljk5NCAzNC4yNTEsMjM4IDQ4LjA0LDIzOCAxMzgsMTc3LjYzNCAgIiBzdHlsZT0iZmlsbDojRUU1MjgxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDo4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiLz48cG9seWdvbiBwb2ludHM9IiAgIDI3My44NTEsMTQyIDE3MCwxNDIgMTcwLDcwIDEzOCw3MCAxMzgsMTQyIDM0LDE0MiAzNC4wNjYsMTcwIDEzOCwxNzAgMTM4LDIzOCAxNzAsMjM4IDE3MCwxNzAgMjczLjg5OCwxNzAgICIgc3R5bGU9ImZpbGw6I0VFNTI4MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6ODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7Ii8+PC9nPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjwvc3ZnPg=="/> </a>
+				</div>
+
+				<!-- Nav column -->
+				<nav class="menu" >
+					<a href="#menu"></a>				
+				</nav>
+						<!-- Nav -->
+				<nav id="menu">
+					{% main_menu %}
+				</nav>
+				
+				
+			</header>
+

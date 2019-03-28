@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% load static %}
+
+
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% load i18n %}
+
+{% block content %}
+
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<div id="logo_div">
+						<svg x="0px" y="0px"
+							 viewBox="0 0 400 746.3" style="enable-background:new 0 0 400 746.3;" xml:space="preserve">
+						<path class="st0" d="M326,365.1L17.4,673.7C56.8,712.9,111.1,737,171,737c120.5,0,218.2-97.7,218.2-218.2 C389.3,458.9,365.1,404.6,326,365.1z"/>
+						<path class="st1" d="M81.6,383.5L390.2,74.9C350.6,34.7,295.6,9.8,234.7,9.8c-120.5,0-218.2,97.7-218.2,218.2
+	C16.5,288.9,41.4,343.9,81.6,383.5z"/>
+						<line class="st2" x1="129.9" y1="450.1" x2="272.4" y2="307.6"/>
+						</svg>
+						<span id="logotext">Sapiowork</span>
+						</div>
+					<h1>{{page.title|safe}}</h1>
+				</div>
+			</section>
+
+		<!-- Highlights -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>{{ page.highlight_title }}</h2>
+						{{ page.highlight_text|richtext }}
+
+					</header>
+					<div class="highlights">
+						<a href="{{acti_url_0}}">
+							<section>
+							<div class="content">
+								<header>
+									<span class="{{class_code_0}}"></span>
+									<h3>{{acti_title_0}}</h3>
+								</header>
+								<p>{{acti_job_0}}
+								</p>
+							</div>
+						</section>
+						</a>
+						<a href ="{{acti_url_1}}">
+							<section>
+								<div class="content">
+									<header>
+										<span class="{{class_code_1}}"></span>
+										<h3>{{acti_title_1}}</h3>
+									</header>
+									<p>{{acti_job_1}}</p>
+								</div>
+							</section>
+						</a>
+						<a href ="{{acti_url_2}}">
+							<section>
+								<div class="content">
+									<header>
+										<span class="{{class_code_2}}"></span>
+										<h3>{{acti_title_2}}</h3>
+									</header>
+									<p>{{acti_job_2}}</p>
+								</div>
+							</section>
+						</a>
+						<a href ="{{acti_url_3}}">
+							<section>
+								<div class="content" >
+									<header>
+										<span class="{{class_code_3}}"></span>
+										<h3>{{acti_title_3}}</h3>
+									</header>
+									<p>{{acti_job_3}}</p>
+								</div>
+							</section>
+						</a>
+					</div>
+				</div>
+			</section>
+{% if blogarticles.all %}
+		<!-- CTA 1 -->
+			<section id="cta" class="wrapper" style="background-image:linear-gradient(#111111 10%,transparent 90%),url('/media/images/cta01.jpg')">
+				<div class="inner">
+					<h2>{{page.cta1_title|safe}}</h2>
+					<p>{{page.cta1_text|safe}}</p>
+					
+					<a class='button' href="contact">CONTACT</a>
+				</div>
+			</section>
+{% endif %}
+{% get_current_language as LANGUAGE_USED %}
+
+{% if blogarticles.all %}
+
+		<!-- Blog Articles -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Blog</h2>
+						<p>{% if LANGUAGE_USED == 'fr' %}Suivez-nous pour en savoir plus sur nos actualités et l'outsourcing au Vietnam{% else %}Follow us to know more about current trends in Vietnam outsourcing.{%endif%}</p>
+					</header>
+					<div class="Blogarticles">
+						{% for blog in blogarticles %}
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>{{ blog.intro }}</p>
+								</blockquote>
+								<div class="author">
+									<p class="credit">- <strong>{{blog.author}}</strong> <span>{{blog.date}}</span></p>
+								</div>
+								<div class="link">
+									<a href={{blog.url}}>{% if LANGUAGE_USED == 'fr' %}Lire l'article{% else %}Read the article{%endif%}</a>
+								</div>
+							</div>
+						</section>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+
+{% endif %}
+
+		<!-- CTA 2 -->
+		{% if page.list_testimonials.all %} 
+			<section id="cta" class="wrapper" style="background-image:linear-gradient(#111111 10%,transparent 90%),url('/media/images/cta02.jpg')">
+				<div class="inner">
+					<h2>{{page.cta2_title|safe}}
+					</h2>{{page.cta2_text|safe}}
+				</div>
+			</section>
+
+		<!-- Testimonials -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>{{page.testimonial_title}}</h2>
+						<p>{{page.testimonial_text|richtext}}</p>
+					</header>
+					<div class="testimonials">
+						{% for item in page.list_testimonials.all %}
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>{{ item.text }}</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										{% image item.picture fill-50x50 %}
+									</div>
+									<p class="credit">- <strong>{{item.name}}</strong> <span>{{item.position}}</span></p>
+								</div>
+							</div>
+						</section>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+		{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% load i18n %}
+
+{% block body_class %}template-consultingpage{% endblock %}
+
+{% block content %}
+
+<!-- Heading -->
+    <div id="heading" style="background-position: bottom">
+        <h1>{{page.title}}</h1>
+    </div>
+
+<!-- Main -->
+   <section id="main" class="wrapper">
+        <div class="inner">  
+            <div class="intro">{{ page.intro|richtext }}{{ page.body|richtext }}
+            </div>
+            
+        </div>
+    </section>
+
+    <section>
+        <div class="inner">
+            <div class="consulting">
+                <div class="block">
+                    <img class="icn_consulting" src="/media/images/IT-outsourcing.jpg" />
+                    {{page.text_IT|richtext}}
+                </div>
+                <div class="block">
+                    {{page.text_BPO|richtext}}
+                    <img class="icn_consulting" src="/media/images/BPO-outsourcing.jpg" style="align-self: right"/>
+                </div>
+                <div class="block">
+                    <img class="icn_consulting" src="/media/images/outsourcing-consulting.jpg" />
+                    {{page.text_consulting|richtext}}
+                </div>
+        </div>
+        
+       
+    </section>
+
+
+
+{% endblock %}
