@@ -1,6 +1,6 @@
 production.py
 
-db.sqlite3
+.sqlite3
 
 *.pyc
 .DS_Store
