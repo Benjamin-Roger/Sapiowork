@@ -1,1 +1,11 @@
 production.py
+
+db.sqlite3
+
+*.pyc
+.DS_Store
+*.swp
+/Scripts/
+/Lib/
+/Include/
+.env
